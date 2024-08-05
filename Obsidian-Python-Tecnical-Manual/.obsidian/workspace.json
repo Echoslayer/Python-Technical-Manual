@@ -1,0 +1,151 @@
+{
+  "main": {
+    "id": "48f499b429a58016",
+    "type": "split",
+    "children": [
+      {
+        "id": "a93fb87fe329b2a1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "964b93a48ead370e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Python 3.9 技術手冊/Index of Python 3.9 技術手冊.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "830a74f3ca32e8ee",
+    "type": "split",
+    "children": [
+      {
+        "id": "6614b32632a6b9fe",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "edfb8ceb81af9c43",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "a39dbc10b70da7ae",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "20f75ac5673a6b21",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "e4cb37c1a910095b",
+    "type": "split",
+    "children": [
+      {
+        "id": "241e2e271963cf37",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "32bce6d164158afb",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Python 3.9 技術手冊/Index of Python 3.9 技術手冊.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "57335b1f22ddd8e8",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Python 3.9 技術手冊/Index of Python 3.9 技術手冊.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "34eeea5bfeb7ebd8",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "758290c7969550d5",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Python 3.9 技術手冊/Index of Python 3.9 技術手冊.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:開啟快速切換": false,
+      "graph:查看關聯圖": false,
+      "canvas:建立新畫布": false,
+      "daily-notes:開啟今天的每日筆記": false,
+      "templates:插入模板": false,
+      "command-palette:開啟命令面板": false
+    }
+  },
+  "active": "964b93a48ead370e",
+  "lastOpenFiles": []
+}
