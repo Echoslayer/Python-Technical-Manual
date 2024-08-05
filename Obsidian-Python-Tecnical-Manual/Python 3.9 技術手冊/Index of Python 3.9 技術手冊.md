@@ -24,9 +24,19 @@
 	- Tools: 範例程式碼與一些工具程式
 	- [[Command ch01]]
 - ch02 從REPL到IDE   
-	- 
+	- python是來自影劇: Monty Python's Flying Circus
+	- 舊版windows記事本開頭可以註解編碼方式
+	- 套件名稱會成為名稱空間一部分
 - ch03 型態與運算子   
-	- 
+	- Father of Pascal: Niklaus E. Writh說過: Algorithms + Data Structure = Programs
+	- Python 所有資料都是物件
+	- 數字中間可以加上底線，方便閱讀
+	- python 3.6之後才有f字串
+	- Duck Typing
+	- Bitwise Operators: & | ^ ~ >> <<
+	- 位元運算子還可以用在set上面
+	- `* `可以拆解迭代物件, `**` 可以將dict的值也拆出來
+	- Python 3.5(PEP 448)增加Additional Unpacking Generalizations 
 - ch04 流程語法與函式   
 	- 
 - ch05 從模組到類別   
