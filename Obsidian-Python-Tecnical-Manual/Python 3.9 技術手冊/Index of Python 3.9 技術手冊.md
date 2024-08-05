@@ -1,2 +1,57 @@
 [書籍程式碼](http://books.gotop.com.tw/download/ACL059900)
 
+- ch01 Python起步走
+	- 重要 PEPs: 
+		- **PEP 1**：PEP (Python Enhancement Proposal) 的目的是描述一項新功能，收集社群的意見並記錄其決策過程。
+		- **PEP 8**：提供了撰寫Python程式碼時應遵循的編碼風格指南，以提高程式碼的可讀性和一致性。
+		- **PEP 20**：包含了稱為“Zen of Python”的20條箴言，總結了Python設計的核心原則和哲學。
+		- **PEP 257**：定義了Python中docstring（文件字串）的格式標準，用於撰寫內部文件和API文件。
+		- **PEP 333**：定義了Python Web伺服器閘道介面（WSGI），標準化了Python web應用程序與web伺服器之間的通訊協定。
+		- **PEP 484**：引入了可選的型別提示，讓開發者可以在程式碼中明確標註變數和函數的型別，增強程式碼的可讀性和靜態分析能力。
+		- **PEP 3107**：引入了函數注解，允許開發者在函數定義中添加額外的元數據，這在設計API和進行靜態型別檢查時非常有用。
+		- **PEP 572**：引入了命名表達式，允許在表達式內進行變數賦值，簡化了一些常見的編碼模式。
+		- **PEP 618**：引入了新的語法特性以支援並行處理，這在現代多核處理器和並行計算需求下變得非常重要。
+	- PyCon研討會
+	- LocalUserGroups
+	- 實作方式
+		- CPython
+		- PyPy
+		- Jython
+		- IronPython
+	- pyhon390.chm: Python 文件
+	- site-packages: 第三方程式庫存放位置
+	- Scripts: pip and easy_install相關指令
+	- Tools: 範例程式碼與一些工具程式
+	- [[Command ch01]]
+- ch02 從REPL到IDE   
+	- 
+- ch03 型態與運算子   
+	- 
+- ch04 流程語法與函式   
+	- 
+- ch05 從模組到類別   
+	- 
+- ch06 類別的繼承   
+	- 
+- ch07 例外處理   
+	- 
+- ch08 open()與io模組   
+	- 
+- ch09 資料結構   
+	- 
+- ch10 資料永續與交換   
+	- 
+- ch11 常用內建模組   
+	- 
+- ch12 除錯、測試與效能   
+	- 
+- ch13 並行、平行與非同步   
+	- 
+- ch14 進階主題   
+	- 
+- 附錄A venv   
+	- 
+- 附錄B Django簡介   
+	- 
+- 附錄C Beautiful Soup簡介
+	- 
