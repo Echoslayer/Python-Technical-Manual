@@ -27,6 +27,7 @@
 	- python是來自影劇: Monty Python's Flying Circus
 	- 舊版windows記事本開頭可以註解編碼方式
 	- 套件名稱會成為名稱空間一部分
+	- [[Command ch02]]
 - ch03 型態與運算子   
 	- Father of Pascal: Niklaus E. Writh說過: Algorithms + Data Structure = Programs
 	- Python 所有資料都是物件
@@ -38,7 +39,10 @@
 	- `* `可以拆解迭代物件, `**` 可以將dict的值也拆出來
 	- Python 3.5(PEP 448)增加Additional Unpacking Generalizations 
 - ch04 流程語法與函式   
-	- 
+	- Python 3.8有海象運算子
+	- 可以將超過一個list作list comprehension
+	- [遞迴的美麗與哀愁](openhome.cc/Gossip/Programmer/Recursive.html)
+	- Python 3.8 PEP570: Positional-Only Parameters (`*` 與 `/` ) 
 - ch05 從模組到類別   
 	- 
 - ch06 類別的繼承   
