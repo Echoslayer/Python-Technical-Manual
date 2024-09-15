@@ -20,20 +20,14 @@
               },
               "pinned": true
             }
-          }
-        ]
-      },
-      {
-        "id": "518dcfd80ed5781c",
-        "type": "tabs",
-        "children": [
+          },
           {
-            "id": "20d9f59dbe78f02f",
+            "id": "5d3a3c300f603e33",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Python 3.9 技術手冊/Commands/Command ch02.md",
+                "file": "Python 3.9 技術手冊/Commands/Code Samples Files.md",
                 "mode": "source",
                 "source": false
               }
@@ -168,9 +162,20 @@
   },
   "active": "964b93a48ead370e",
   "lastOpenFiles": [
-    "Python 3.9 技術手冊/Commands/Command ch02.md",
+    "Python 3.9 技術手冊/何謂封裝.pdf",
     "Python 3.9 技術手冊/Index of Python 3.9 技術手冊.md",
+    "Python 3.9 技術手冊/何謂封裝.pdf.pdf",
+    "Python 3.9 技術手冊/test1.pdf",
+    "何謂封裝 Java SE 7 稿 草冊手術技.md",
+    "Python 3.9 技術手冊/Commands/Command ch02.md",
+    "www.slideshare.net/JustinSDK/java-se-7-16580919.md",
+    "www.slideshare.net/JustinSDK",
+    "www.slideshare.net",
+    "Python 3.9 技術手冊/Commands/Code Samples Files.md",
+    "www.slideshare.net/JustinSDK/java-se-7-165809.md",
+    "Python 3.9 技術手冊/Commands/Code Labs Files.md",
     "Python 3.9 技術手冊/Commands/Command ch01.md",
+    "Python 3.9 技術手冊/Commands/Code Exercises Files.md",
     "Python 3.9 技術手冊/Commands"
   ]
 }

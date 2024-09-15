@@ -18,7 +18,7 @@ def clerk(jobs, producer, consumer):
     c = consumer()
     next(c)  # 第一次觸發 consumer 產生器
     for i in range(jobs):
-        data = next(p)
-        c.send(data)
+        data = next(p)  # 呼叫生產者，產生一個數據
+        c.send(data)    # 將生產的數據發送給消費者
 
 clerk(int(sys.argv[1]), producer, consumer)

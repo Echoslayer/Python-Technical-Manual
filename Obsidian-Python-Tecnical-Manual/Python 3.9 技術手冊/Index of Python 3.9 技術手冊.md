@@ -1,6 +1,6 @@
-[書籍程式碼](http://books.gotop.com.tw/download/ACL059900)
+[書籍程式碼下載](http://books.gotop.com.tw/download/ACL059900)
 
-- ch01 Python起步走
+- Ch01 Python起步走
 	- 重要 PEPs: 
 		- **PEP 1**：PEP (Python Enhancement Proposal) 的目的是描述一項新功能，收集社群的意見並記錄其決策過程。
 		- **PEP 8**：提供了撰寫Python程式碼時應遵循的編碼風格指南，以提高程式碼的可讀性和一致性。
@@ -22,13 +22,13 @@
 	- site-packages: 第三方程式庫存放位置
 	- Scripts: pip and easy_install相關指令
 	- Tools: 範例程式碼與一些工具程式
-	- [[Command ch01]]
-- ch02 從REPL到IDE   
+	- [[Command Ch01]]
+- Ch02 從REPL到IDE   
 	- python是來自影劇: Monty Python's Flying Circus
 	- 舊版windows記事本開頭可以註解編碼方式
 	- 套件名稱會成為名稱空間一部分
-	- [[Command ch02]]
-- ch03 型態與運算子   
+	- [[Command Ch02]]
+- Ch03 型態與運算子   
 	- Father of Pascal: Niklaus E. Writh說過: Algorithms + Data Structure = Programs
 	- Python 所有資料都是物件
 	- 數字中間可以加上底線，方便閱讀
@@ -38,30 +38,134 @@
 	- 位元運算子還可以用在set上面
 	- `* `可以拆解迭代物件, `**` 可以將dict的值也拆出來
 	- Python 3.5(PEP 448)增加Additional Unpacking Generalizations 
-- ch04 流程語法與函式   
+	- 需要處理精確的小數運算結果，使用`decimal.Decimal`類別
+- Ch04 流程語法與函式   
 	- Python 3.8有海象運算子
 	- 可以將超過一個list作list comprehension
 	- [遞迴的美麗與哀愁](openhome.cc/Gossip/Programmer/Recursive.html)
 	- Python 3.8 PEP570: Positional-Only Parameters (`*` 與 `/` ) 
-- ch05 從模組到類別   
+	- python map
+	- python 中的全域，是以模組檔案為界
+	- `dir()`可以查詢指定物件上可用的名稱
+	- `locals()`可以查詢區域變數的名稱與值
+	- `yeild`是生成器的核心，它會暫停函數的運行，並將當前的值返回
+	- Python 3.5加入動態提示，Python 3.6將typing納入api
+	- 模組`mypy`為推薦檢查型態的工具，或是google `pytype` FB `Pyre` MSFT `pyright`
+	- `BookCode/samples/Ch04/type_hints/account.py` 中有關於`@overload`的用法，但`@overload` **只用於型別提示**，不會在執行時強制檢查型別
+- Ch05 從模組到類別   
+	- 架構程式時需要注意
+		- 抽象層的封裝與隔離
+		- 物件的狀態
+		- 名稱空間
+		- 資源實體組織方式
+	- 模組中定義`__all__`清單或是名稱前有`_`，就可以保證`from module import *`只會import 名稱的變數
+	- `del`除了可以刪除變數，也可以刪除引入的模組，但是他是刪除名稱而非物件，可用`sys.modules['deleted_module']`來查看被刪除的變數
+	- `sys.path`來源
+		- 執行python interpreter的資料夾
+		- PYTHONPATH環境變數
+		- Python安裝中的標準程式庫資料夾
+		- PTH檔案列出的資料夾
+			- 可透過`site.getsitepackages()`取得path
+			- `site.addsitedir()`可以將PTH檔案放到其他資料夾
+	- python中，物件方法的第一個參數一定是物件本身
+	- 物件特殊名稱
+	    - `__init__()`
+	        - 物件的初始化方法，當物件被建立時自動調用，用來設置物件的初始狀態（屬性）。
+	    - `__str__()`
+	        - 定義當使用 `print()` 或 `str()` 函數時，返回物件的可讀字串表示。這主要是用來提供使用者友好的描述。
+	    - `__repr__()`
+	        - 定義當使用 `repr()` 函數或在交互式解釋器中輸入物件時，返回物件的正式字串表示。通常應該返回一個可以用來重新創建此物件的表達式。
+	- class 內部變數會用`__name`來避免被更改，如果硬要存取需要使用`_classname___name`(較不推薦)或是建立`@property`在同名function上傳遞出來(固定存取原則)
+		- 被`@property`標註的`xxx`取值方法，可以使用`@xxx.setter`來設值，`@xxx.deleter`來刪除
+	- [[何謂封裝.pdf]]
+	- `@staticmehtod` 定義了靜態方法
+	- `@classmethod` 定義了類方法
+	- 每個物件都有`__dict__()`屬性，記錄著所有特性，如果要看其資料，則使用`var()`來取得
+	- `del`的真正作用是刪除某物件的指定屬性
+	- `cls` 是類方法的第一個參數，代表類本身，而不是實例。
+		- **用法**: 當你定義一個類方法時，你會使用 cls 來引用類的屬性和方法。這意味著你可以在類方法中操作類本身，而不是某個特定的實例。
+	- `__new__()`定義了類別實例如何建構
+- Ch06 類別的繼承   
+	- 鴨子定型的實際意義在於：『思考物件的行為，而非物件的種類！』
+	- 在父類別中先行指定`metaclass==`為`abc`模組的`ABCMeta`類別並在指定的method上標注`@abstractmethod`即可強制子類別一定要實作。
+	- Rich comparision
+		- object定義的`__eq__()`預設用`is`來比較
+		- 要定義整組比較方法，使用`functools`的`total_ordering`裝飾器
+	- `enum`列舉
+		- class加上`@unique`可以使列舉名稱不得重複
+	- 多重繼承
+	- `@final`可以放在class或method上，使其無法繼承或無法被重新定義
+	- Docstrings
+		- 多行的函式或method或是簡述在‘’’後面，空一行後再接描述
+		- 類別或模組的多行則是，換行再以相同縮排描述
+		- 套件則是寫在`__init__.py`中
+		- 慣例在python lib中，或是查詢PEP275
+	- 官方文件可上網查詢或用`python -m pydoc -p 8080`
+	- python中使用`-m`表示執行指定模組的頂層程式流程
+	- 泛型
+		- 如果想要指定站位型態，使用`typing`中的`TypeVar`
+- Ch07 例外處理   
+	- python 中例外不一定是錯誤，不少意外代表著一種通知
+	- exception右方可以使用tuple來捕捉指定複數種類的例外
+	- 例外也有繼承架構
+	- 例外都是`BaseException`的子類別
+	- 可以先將exception整理為指定資料結構日誌，再raise
+		- 當你捕獲到一個異常（OriginalException），但需要在相同的邏輯中重新拋出另一個異常（NewException），並且希望保持原始異常的上下文信息時，可以使用 raise from。
+	- 主動引發一個意外許多時候是對呼叫者善盡告知的責任
+	- 若事前無法決定import模組名稱，後續可能會以字串方式import，則可使用`importlib`
+	- 若想知道例外發生根源，以及多重呼叫下例外的傳播過程，可使用`traceback`
+		- 還可以將`traceback`所追蹤的訊息輸出到指定file
+		- 或是指定最初或最後的錯誤個數
+	- `sys.exc_info()`是簡單輸出例外的方式
+	- 警示訊息不會透過`raise`，而是`warning`的`warn()`
+	- `else`只有在`try`沒有發生例外時執行
+		- 主要功能是要讓可能發生意外的程式碼與`try`放在一起
+	- `finally`則是無論如何都會執行
+		- 如果在前面`try, else, except`已經`return`，程式也會運行`finally`再`return`
+	- `with as`
+		- 之後的資源實例透過`as`指定給一變數，離開區塊後就會自動做資源清除的動作
+		- 只要物件支持情境管理協定，就可以使用
+	- 情境管理協定(Context Management Protocol)
+		- 要實作`__enter__()`與`__exit__()`物件
+		- 可以使用`contextlib`的`@contextmanager`來讓資源的設定與清除更為直覺
+			- 函式中要求要有`try`與`finally`，如果要搭配`with as`則要有`yeild`
+- Ch08 open()與io模組   
+	- 檔案開啓模式
+		- **`r`**: 讀取模式（預設），如果檔案不存在則報錯。
+		- **`w`**: 寫入模式，會覆蓋檔案內容，若檔案不存在會創建新檔案。
+		- **`x`**: 排他性寫入模式，若檔案已存在則報錯。
+		- **`a`**: 附加模式，將資料寫入檔案末尾，若檔案不存在會創建新檔案。
+		- **`b`**: 二進位模式，用於讀寫二進位文件，如圖片、影片等。
+		- **`t`**: 文字模式（預設），用於讀寫文本文件。
+		- **`+`**: 讀寫模式，允許同時讀取和寫入文件。
+	- `read()`
+		- 方法在沒有指定引數時會讀取檔案所有內容
+	- 可以使用`readable`與`writable`來測試權限
+	- 對於文字模式來說，預設是讀取到`\n`, `\r`, `\r\n`時都會判斷成一行，但是`readline()`與`readlines()`會將其轉換成`\n`
+	- `open()`傳回的檔案物件都實作了`__iter__()`，所以最好的方式是用`for in`而非`read`
+	- **`tell()`**: 返回文件當前的讀寫位置，以字節為單位。
+	- **`seek(offset, whence)`**: 移動文件的讀寫位置。`offset` 表示要移動的字節數，`whence` 指定移動的基準位置（0: 文件開頭，1: 當前位置，2: 文件末尾）。
+	- **`flush()`**: 將文件緩衝區的內容立即寫入硬碟，而不等待自動刷新。
+- Ch09 資料結構   
+	- hashable物件必須實作`__hash__()`與`__eq__()`
+	- 對於python內建型態，只要建立後無法變動的型態，都是hashable
+	- 自定義類別所建立的實例預設是hashable，其`__eq__()`是根據`id()`而來
+	- Python 3.7增加了 dataclass
+		- 設定frozen=True就可變為hashable
+		- 可以使用`make_dataclass`來臨時建立dataclass
+	- 具有`__iter__()`就是iterable物件
+	- 迭代器也是iterable物件
+	- python中提供的 `itertools`可協助建立迭代器或產生器
 	- 
-- ch06 類別的繼承   
+- Ch10 資料永續與交換   
 	- 
-- ch07 例外處理   
+- Ch11 常用內建模組   
 	- 
-- ch08 open()與io模組   
+- Ch12 除錯、測試與效能   
 	- 
-- ch09 資料結構   
+- Ch13 並行、平行與非同步   
 	- 
-- ch10 資料永續與交換   
-	- 
-- ch11 常用內建模組   
-	- 
-- ch12 除錯、測試與效能   
-	- 
-- ch13 並行、平行與非同步   
-	- 
-- ch14 進階主題   
+- Ch14 進階主題   
 	- 
 - 附錄A venv   
 	- 

@@ -1,0 +1,1464 @@
+<div
+  id="new-player"
+  class="vertical-player VerticalPlayer_root__K8_YS"
+  data-slideshow-id="16580919"
+>
+  <div>
+    <p class="VerticalSlide_slideNumber__kZzJG">1</p>
+    <div
+      id="slide1"
+      class="VerticalSlide_root__jU_9r slide-item"
+      style="aspect-ratio: 595 / 842"
+      data-cy="slide-container"
+    >
+      <div class="VerticalSlideImage_root__64KSA">
+        <div
+          class="VerticalSlideImage_overlay__UDxeS VerticalSlideImage_loaded__Q7FLb"
+        ></div>
+        <img
+          id="slide-image-0"
+          alt='Java SE 7   稿 草冊手術技
+
+    何謂封裝？
+5.1 何謂封裝？
+   在第 4 章稍微介紹了如何定義類別，有個觀念必須先釐清，定義類別並不等於作
+好了物件導向中封裝（Encapsulation）的概念，那麼到底什麼才有封裝的意涵？你
+          封裝（
+          封裝           ）
+必須以物件的角度來思考問題。
+   本節著重在封裝的觀念，並一併說明如何以 Java 語法來實作，有一些內容會略
+為與第 4 章重複，這是為了介紹上的完整性，在瞭解封裝基本概念之後，下一節會進
+入 Java 的語法細節。
+
+
+      封裝物件初始流程
+        物件初始
+5.1.1 封裝物件初始流程
+  假設你要寫個可以管理儲值卡的應用程式，首先得定義儲值卡會記錄哪些資料，
+像是儲值卡號碼、餘額、紅利點數，在 Java 中可使用 class 關鍵字進行定義：
+package cc.openhome;
+class CashCard {
+      String number;
+      int balance;
+      int bonus;
+}
+  假設你將這個類別是定義在 cc.openhome 套件，使用 CashCard.java 儲存，並
+編譯為 CashCard.class，並將這個位元碼給朋友使用，你的朋友要建立 5 張儲值卡
+的資料：
+CashCard card1 = new CashCard();
+card1.number = "A001";
+card1.balance = 500;
+card1.bonus = 0;
+
+
+CashCard card2 = new CashCard();
+card2.number = "A002";
+card2.balance = 300;
+card2.bonus = 0;
+
+
+CashCard card3 = new CashCard();
+card3.number = "A003";
+card3.balance = 1000;
+card3.bonus = 1;       //   值儲次單   1000   點一利紅 得獲 可元
+...
+      在這邊可以看到，如果想存取物件的資料成員，可以透過「.」運算子加上資料
+ '
+          class="vertical-slide-image VerticalSlideImage_image__VtE4p VerticalSlideImage_loaded__Q7FLb"
+          data-testid="vertical-slide-image"
+          loading="eager"
+          srcset="
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-1-320.jpg   320w,
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-1-638.jpg   638w,
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/75/Java-SE-7-1-2048.jpg 2048w
+          "
+          src="https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-1-320.jpg"
+          sizes="100vw"
+        />
+        <div class="SlideScrollDetector_root__AIK38">
+          <div
+            class="SlideScrollDetector_detector__rhkyk SlideScrollDetector_detector1__NmF8s"
+            data-index="0"
+          ></div>
+          <div
+            class="SlideScrollDetector_detector__rhkyk SlideScrollDetector_detector2__32XWr"
+            data-index="1"
+          ></div>
+        </div>
+      </div>
+      <!--$--><!--/$-->
+      <div class="VerticalSlideActions_root__azvaH">
+        <div class="Tooltip_triggerWrapper___S2HG">
+          <button
+            type="button"
+            class="Button_root__i1yp0 Button_primary__K25Gq Button_text__ZT_3O Button_medium__H8pKi Button_icon__1C4qi slide-download-button VerticalSlideActions_downloadButton__ancDu"
+            data-testid="button"
+          >
+            <span class="Icon_root__AjZyv" style="--size: 24px"
+              ><span
+                class="Icon_icon__4zzsG"
+                style="
+                  mask-image: url('https://public.slidesharecdn.com/_next/static/media/download.b1b2622c.svg');
+                  background-color: currentcolor;
+                  --darkreader-inline-bgcolor: currentcolor;
+                "
+                data-darkreader-inline-bgcolor=""
+              ></span
+              ><span class="sr-only"></span
+            ></span>
+          </button>
+        </div>
+        <div class="save-slide SaveSlide_root__k6Uis">
+          <button
+            type="button"
+            class="Button_root__i1yp0 Button_secondary__hHiHI Button_text__ZT_3O Button_medium__H8pKi Button_icon__1C4qi save-slide-button SaveOptionsDrawer_drawerTrigger__Gb7nK"
+            data-testid="button"
+            aria-label="more_options"
+            data-cy="mobile-save-slideshow-button"
+          >
+            <span class="Icon_root__AjZyv" style="--size: 24px"
+              ><span
+                class="Icon_icon__4zzsG"
+                style="
+                  mask-image: url('https://public.slidesharecdn.com/_next/static/media/save.ef1812e2.svg');
+                  background-color: currentcolor;
+                  --darkreader-inline-bgcolor: currentcolor;
+                "
+                data-darkreader-inline-bgcolor=""
+              ></span
+              ><span class="sr-only"></span
+            ></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <p class="VerticalSlide_slideNumber__kZzJG">2</p>
+    <div
+      id="slide2"
+      class="VerticalSlide_root__jU_9r slide-item"
+      style="aspect-ratio: 595 / 842"
+      data-cy="slide-container"
+    >
+      <div class="VerticalSlideImage_root__64KSA">
+        <div
+          class="VerticalSlideImage_overlay__UDxeS VerticalSlideImage_loaded__Q7FLb"
+        ></div>
+        <img
+          id="slide-image-1"
+          alt='Java SE 7   稿 草冊手術技
+成員名稱。
+  你發現到每次他在建立儲值卡物件時，都會作相同的初始動作，也就是指定卡
+號、餘額與紅利點數，這個流程是重複的，更多的 CashCard 物件建立會帶來更多
+的程式碼重複，在程式中出現重複的流程，往往意謂著有改進的空間，在 4.1.1 中談
+過，Java 中可以定義建構式（Constructor）來改進這個問題：
+            建構式（
+            建構式            ）
+Encapsulation1          CashCard.java
+package cc.openhome;
+class CashCard {
+      String number;
+      int balance;
+      int bonus;
+      CashCard(String number, int balance, int bonus) {
+            this.number = number;
+            this.balance = balance;
+            this.bonus = bonus;
+      }
+}
+   正如 4.1.1 談過的，建構式是與類別名稱同名的方法（Method）
+                                  方法（
+                                  方法      ，不用宣告傳回
+                                          ）
+型態，在這個例子中，建構式上的 number、balance 與 bonus 參數，與類別的
+number、balance、bonus 資料成員同名了，為了區別，在物件資料成員前加上
+this 關鍵字，表示將 number、balance 與 bonus 參數的值，指定給這個物件的
+number、balance、bonus 資料成員。
+   在你重新編譯 CashCard.java 為 CashCard.class 之後，交給你的朋友，同樣是
+建立五個 CashCard 物件，現在他只要這麼寫：
+CashCard card1 = new CashCard("A001", 500, 0);
+CashCard card2 = new CashCard("A002", 300, 0);
+CashCard card3 = new CashCard("A003", 1000, 1);
+...
+  比較看看，他應該會想寫這個程式片段，還是剛剛那個程式片段？那麼你封裝了
+什麼？你用了 Java 的建構式語法，實現物件初始化流程的封裝
+                    實現物件初始化流程的封裝。封裝物件初始化流
+                    實現物件初始化流程的封裝
+程有什麼好處？拿到 CashCard 類別的使用者，不用重複撰寫物件初始化流程，事
+實上，他也不用知道物件如何初始化，就算你修改了建構式的內容，重新編譯並給予
+位元碼檔案之後，CashCard 類別的使用者也無需修改程式。
+  實際上，如果你的類別使用者想建立 5 個 CashCard 物件，並將資料顯示出來，
+可以用陣列，而無需個別宣告參考名稱。例如：
+Encapsulation1          CashApp.java
+package cc.openhome;
+ '
+          class="vertical-slide-image VerticalSlideImage_image__VtE4p VerticalSlideImage_loaded__Q7FLb"
+          data-testid="vertical-slide-image"
+          loading="lazy"
+          srcset="
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-2-320.jpg   320w,
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-2-638.jpg   638w,
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/75/Java-SE-7-2-2048.jpg 2048w
+          "
+          src="https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-2-320.jpg"
+          sizes="100vw"
+        />
+        <div class="SlideScrollDetector_root__AIK38">
+          <div
+            class="SlideScrollDetector_detector__rhkyk SlideScrollDetector_detector1__NmF8s"
+            data-index="0"
+          ></div>
+          <div
+            class="SlideScrollDetector_detector__rhkyk SlideScrollDetector_detector2__32XWr"
+            data-index="1"
+          ></div>
+        </div>
+      </div>
+      <!--$--><!--/$-->
+      <div class="VerticalSlideActions_root__azvaH">
+        <div class="Tooltip_triggerWrapper___S2HG">
+          <button
+            type="button"
+            class="Button_root__i1yp0 Button_primary__K25Gq Button_text__ZT_3O Button_medium__H8pKi Button_icon__1C4qi slide-download-button VerticalSlideActions_downloadButton__ancDu"
+            data-testid="button"
+          >
+            <span class="Icon_root__AjZyv" style="--size: 24px"
+              ><span
+                class="Icon_icon__4zzsG"
+                style="
+                  mask-image: url('https://public.slidesharecdn.com/_next/static/media/download.b1b2622c.svg');
+                  background-color: currentcolor;
+                  --darkreader-inline-bgcolor: currentcolor;
+                "
+                data-darkreader-inline-bgcolor=""
+              ></span
+              ><span class="sr-only"></span
+            ></span>
+          </button>
+        </div>
+        <div class="save-slide SaveSlide_root__k6Uis">
+          <button
+            type="button"
+            class="Button_root__i1yp0 Button_secondary__hHiHI Button_text__ZT_3O Button_medium__H8pKi Button_icon__1C4qi save-slide-button SaveOptionsDrawer_drawerTrigger__Gb7nK"
+            data-testid="button"
+            aria-label="more_options"
+            data-cy="mobile-save-slideshow-button"
+          >
+            <span class="Icon_root__AjZyv" style="--size: 24px"
+              ><span
+                class="Icon_icon__4zzsG"
+                style="
+                  mask-image: url('https://public.slidesharecdn.com/_next/static/media/save.ef1812e2.svg');
+                  background-color: currentcolor;
+                  --darkreader-inline-bgcolor: currentcolor;
+                "
+                data-darkreader-inline-bgcolor=""
+              ></span
+              ><span class="sr-only"></span
+            ></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <p class="VerticalSlide_slideNumber__kZzJG">3</p>
+    <div
+      id="slide3"
+      class="VerticalSlide_root__jU_9r slide-item"
+      style="aspect-ratio: 595 / 842"
+      data-cy="slide-container"
+    >
+      <div class="VerticalSlideImage_root__64KSA">
+        <div
+          class="VerticalSlideImage_overlay__UDxeS VerticalSlideImage_loaded__Q7FLb"
+        ></div>
+        <img
+          id="slide-image-2"
+          alt='Java SE 7   稿 草冊手術技
+public class CardApp {
+    public static void main(String[] args) {
+            CashCard[] cards = {
+                 new CashCard("A001", 500, 0),
+                 new CashCard("A002", 300, 0),
+                 new CashCard("A003", 1000, 1),
+                 new CashCard("A004", 2000, 2),
+                 new CashCard("A005", 3000, 3)
+            };
+
+
+            for(CashCard card : cards) {
+                 System.out.printf("(%s, %d, %d)%n",
+                       card.number, card.balance, card.bonus);
+            }
+    }
+}
+     執行結果如下所示：
+(A001, 500, 0)
+(A002, 300, 0)
+(A003, 1000, 1)
+(A004, 2000, 2)
+(A005, 3000, 3)
+
+
+    提示           接下來說明範例時，都會假設有兩個以上的開發者。記得！如果物件導
+                 向或設計上的議題對你來說太抽象，請用兩人或多人共同開發的角度來
+                 想想看，這樣的觀念與設計對大家合作有沒有好處。
+
+
+      封裝物件操作
+          操作流程
+5.1.2 封裝物件操作流程
+  假設現在你的朋友使用 CashCard 建立 3 個物件，並要再對所有物件進行儲值
+的動作：
+Scanner scanner = new Scanner(System.in);
+CashCard card1 = new CashCard("A001", 500, 0);
+int money = scanner.nextInt();
+if(money > 0) {
+    card1.balance += money;
+    if(money >= 1000) {
+            card1.bonus++;
+ '
+          class="vertical-slide-image VerticalSlideImage_image__VtE4p VerticalSlideImage_loaded__Q7FLb"
+          data-testid="vertical-slide-image"
+          loading="lazy"
+          srcset="
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-3-320.jpg   320w,
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-3-638.jpg   638w,
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/75/Java-SE-7-3-2048.jpg 2048w
+          "
+          src="https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-3-320.jpg"
+          sizes="100vw"
+        />
+        <div class="SlideScrollDetector_root__AIK38">
+          <div
+            class="SlideScrollDetector_detector__rhkyk SlideScrollDetector_detector1__NmF8s"
+            data-index="0"
+          ></div>
+          <div
+            class="SlideScrollDetector_detector__rhkyk SlideScrollDetector_detector2__32XWr"
+            data-index="1"
+          ></div>
+        </div>
+      </div>
+      <!--$--><!--/$-->
+      <div class="VerticalSlideActions_root__azvaH">
+        <div class="Tooltip_triggerWrapper___S2HG">
+          <button
+            type="button"
+            class="Button_root__i1yp0 Button_primary__K25Gq Button_text__ZT_3O Button_medium__H8pKi Button_icon__1C4qi slide-download-button VerticalSlideActions_downloadButton__ancDu"
+            data-testid="button"
+          >
+            <span class="Icon_root__AjZyv" style="--size: 24px"
+              ><span
+                class="Icon_icon__4zzsG"
+                style="
+                  mask-image: url('https://public.slidesharecdn.com/_next/static/media/download.b1b2622c.svg');
+                  background-color: currentcolor;
+                  --darkreader-inline-bgcolor: currentcolor;
+                "
+                data-darkreader-inline-bgcolor=""
+              ></span
+              ><span class="sr-only"></span
+            ></span>
+          </button>
+        </div>
+        <div class="save-slide SaveSlide_root__k6Uis">
+          <button
+            type="button"
+            class="Button_root__i1yp0 Button_secondary__hHiHI Button_text__ZT_3O Button_medium__H8pKi Button_icon__1C4qi save-slide-button SaveOptionsDrawer_drawerTrigger__Gb7nK"
+            data-testid="button"
+            aria-label="more_options"
+            data-cy="mobile-save-slideshow-button"
+          >
+            <span class="Icon_root__AjZyv" style="--size: 24px"
+              ><span
+                class="Icon_icon__4zzsG"
+                style="
+                  mask-image: url('https://public.slidesharecdn.com/_next/static/media/save.ef1812e2.svg');
+                  background-color: currentcolor;
+                  --darkreader-inline-bgcolor: currentcolor;
+                "
+                data-darkreader-inline-bgcolor=""
+              ></span
+              ><span class="sr-only"></span
+            ></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="slide-item VerticalInterstitialAdWrapper_root__LxQh8 VerticalInterstitialAdWrapper_extraMargin__mv8Ff"
+  >
+    <div class="interstitial-ad-container VerticalInterstitial_root__Dunl7">
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 320 / 50"
+      >
+        <div><div class="" id="document-interstitial-ad-3"></div></div>
+      </div>
+    </div>
+    <div class="interstitial-ad-container MultipleIncontentSmall_root__x58Hs">
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 300 / 100"
+      >
+        <div><div class="" id="slideshare_incontent_small_3-1"></div></div>
+      </div>
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 300 / 100"
+      >
+        <div><div class="" id="slideshare_incontent_small_3-2"></div></div>
+      </div>
+    </div>
+    <div class="interstitial-ad-container MultipleIncontentWide_root__4WD8U">
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 300 / 100"
+      >
+        <div><div class="" id="slideshare_incontent_wide_3-0"></div></div>
+      </div>
+    </div>
+    <div class="interstitial-ad-container MultipleIncontentLarge_root__pGIAn">
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 300 / 100"
+      >
+        <div><div class="" id="slideshare_incontent_large_3-1"></div></div>
+      </div>
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 300 / 100"
+      >
+        <div><div class="" id="slideshare_incontent_large_3-2"></div></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <p class="VerticalSlide_slideNumber__kZzJG">4</p>
+    <div
+      id="slide4"
+      class="VerticalSlide_root__jU_9r slide-item"
+      style="aspect-ratio: 595 / 842"
+      data-cy="slide-container"
+    >
+      <div class="VerticalSlideImage_root__64KSA">
+        <div
+          class="VerticalSlideImage_overlay__UDxeS VerticalSlideImage_loaded__Q7FLb"
+        ></div>
+        <img
+          id="slide-image-3"
+          alt='Java SE 7   稿 草冊手術技
+            }
+      }
+      else {
+            System.out.println("   ？嗎的亂來是你？的負是值儲
+                                   ？嗎的亂來是你？的負是值儲
+                                   ？嗎的亂來是你？的負是值儲
+                                   ？嗎的亂來是你？的負是值儲           ");
+      }
+
+
+      CashCard card2 = new CashCard("A002", 300, 0);
+      money = scanner.nextInt();
+      if(money > 0) {
+            card2.balance += money;
+            if(money >= 1000) {
+                  card2.bonus++;
+            }
+      }
+      else {
+            System.out.println("   ？嗎的亂來是你？的負是值儲
+                                   ？嗎的亂來是你？的負是值儲
+                                   ？嗎的亂來是你？的負是值儲
+                                   ？嗎的亂來是你？的負是值儲           ");
+      }
+
+
+      CashCard card3 = new CashCard("A003", 1000, 1);
+      //   些那是還      if..else   程流複重 的
+      ...
+            你的朋友作了簡單的檢查，就是儲值不能是負的，而儲值大於 1000 的話，就給
+      予紅利一點，很容易就可以發現，那些儲值的流程重複了。你想了一下，儲值這個動
+      作應該是 CashCard 物件自己處理！在 Java 中，你可以定義方法（Method）來解決
+                                         方法（
+                                         方法       ）
+Lab
+      這個問題：
+      Encapsulation2            CashCard.java
+      package cc.openhome;
+      class CashCard {
+            String number;
+            int balance;
+            int bonus;
+            CashCard(String number, int balance, int bonus) {
+                  this.number = number;
+                  this.balance = balance;
+                  this.bonus = bonus;
+            }
+                    不會傳回值
+            void store(int money) {       //   法方的 叫呼時值儲
+ '
+          class="vertical-slide-image VerticalSlideImage_image__VtE4p VerticalSlideImage_loaded__Q7FLb"
+          data-testid="vertical-slide-image"
+          loading="lazy"
+          srcset="
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-4-320.jpg   320w,
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-4-638.jpg   638w,
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/75/Java-SE-7-4-2048.jpg 2048w
+          "
+          src="https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-4-320.jpg"
+          sizes="100vw"
+        />
+        <div class="SlideScrollDetector_root__AIK38">
+          <div
+            class="SlideScrollDetector_detector__rhkyk SlideScrollDetector_detector1__NmF8s"
+            data-index="0"
+          ></div>
+          <div
+            class="SlideScrollDetector_detector__rhkyk SlideScrollDetector_detector2__32XWr"
+            data-index="1"
+          ></div>
+        </div>
+      </div>
+      <!--$--><!--/$-->
+      <div class="VerticalSlideActions_root__azvaH">
+        <div class="Tooltip_triggerWrapper___S2HG">
+          <button
+            type="button"
+            class="Button_root__i1yp0 Button_primary__K25Gq Button_text__ZT_3O Button_medium__H8pKi Button_icon__1C4qi slide-download-button VerticalSlideActions_downloadButton__ancDu"
+            data-testid="button"
+          >
+            <span class="Icon_root__AjZyv" style="--size: 24px"
+              ><span
+                class="Icon_icon__4zzsG"
+                style="
+                  mask-image: url('https://public.slidesharecdn.com/_next/static/media/download.b1b2622c.svg');
+                  background-color: currentcolor;
+                  --darkreader-inline-bgcolor: currentcolor;
+                "
+                data-darkreader-inline-bgcolor=""
+              ></span
+              ><span class="sr-only"></span
+            ></span>
+          </button>
+        </div>
+        <div class="save-slide SaveSlide_root__k6Uis">
+          <button
+            type="button"
+            class="Button_root__i1yp0 Button_secondary__hHiHI Button_text__ZT_3O Button_medium__H8pKi Button_icon__1C4qi save-slide-button SaveOptionsDrawer_drawerTrigger__Gb7nK"
+            data-testid="button"
+            aria-label="more_options"
+            data-cy="mobile-save-slideshow-button"
+          >
+            <span class="Icon_root__AjZyv" style="--size: 24px"
+              ><span
+                class="Icon_icon__4zzsG"
+                style="
+                  mask-image: url('https://public.slidesharecdn.com/_next/static/media/save.ef1812e2.svg');
+                  background-color: currentcolor;
+                  --darkreader-inline-bgcolor: currentcolor;
+                "
+                data-darkreader-inline-bgcolor=""
+              ></span
+              ><span class="sr-only"></span
+            ></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <p class="VerticalSlide_slideNumber__kZzJG">5</p>
+    <div
+      id="slide5"
+      class="VerticalSlide_root__jU_9r slide-item"
+      style="aspect-ratio: 595 / 842"
+      data-cy="slide-container"
+    >
+      <div class="VerticalSlideImage_root__64KSA">
+        <div
+          class="VerticalSlideImage_overlay__UDxeS VerticalSlideImage_loaded__Q7FLb"
+        ></div>
+        <img
+          id="slide-image-4"
+          alt='Java SE 7   稿 草冊手術技
+            if(money > 0) {
+                this.balance += money;
+                                                                  封裝儲值流程
+                                                                  封裝儲值流程
+                if(money >= 1000) {
+                     this.bonus++;
+                }
+            }
+            else {
+                System.out.println("   ？嗎的 亂來是你 ？的 負是值儲     ");
+            }
+    }
+
+
+    void charge(int money) { //         法方的 叫呼時款扣
+            if(money > 0) {
+                if(money <= this.balance) {
+                     this.balance -= money;
+                }
+                else {
+                     System.out.println("   ！ 啦 夠不錢   ");
+                }
+            }
+            else {
+                System.out.println("   ？嗎值 儲我叫是 不這 ？數負扣     ");
+            }
+    }
+                     會傳回 int 型態
+    int exchange(int bonus) {          //   法 方的叫 呼時數點利紅換兌
+            if(bonus > 0) {
+                this.bonus -= bonus;
+            }
+            return this.bonus;
+    }
+}
+  在 CashCard 類別中，除了定義儲值用的 store()方法之外，你還考慮到扣款
+用的 charge()方法，以及兌換紅利點數的 exchange()方法。在類別中定義方法，
+如果不用傳回值，方法名稱前可以宣告 void 。
+  先前看到的儲值重複流程，現在都封裝到 store()方法中 ，這麼作的好處是
+使用 CashCard 的使用者，現在可以這麼撰寫了：
+ '
+          class="vertical-slide-image VerticalSlideImage_image__VtE4p VerticalSlideImage_loaded__Q7FLb"
+          data-testid="vertical-slide-image"
+          loading="lazy"
+          srcset="
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-5-320.jpg   320w,
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-5-638.jpg   638w,
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/75/Java-SE-7-5-2048.jpg 2048w
+          "
+          src="https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-5-320.jpg"
+          sizes="100vw"
+        />
+        <div class="SlideScrollDetector_root__AIK38">
+          <div
+            class="SlideScrollDetector_detector__rhkyk SlideScrollDetector_detector1__NmF8s"
+            data-index="0"
+          ></div>
+          <div
+            class="SlideScrollDetector_detector__rhkyk SlideScrollDetector_detector2__32XWr"
+            data-index="1"
+          ></div>
+        </div>
+      </div>
+      <!--$--><!--/$-->
+      <div class="VerticalSlideActions_root__azvaH">
+        <div class="Tooltip_triggerWrapper___S2HG">
+          <button
+            type="button"
+            class="Button_root__i1yp0 Button_primary__K25Gq Button_text__ZT_3O Button_medium__H8pKi Button_icon__1C4qi slide-download-button VerticalSlideActions_downloadButton__ancDu"
+            data-testid="button"
+          >
+            <span class="Icon_root__AjZyv" style="--size: 24px"
+              ><span
+                class="Icon_icon__4zzsG"
+                style="
+                  mask-image: url('https://public.slidesharecdn.com/_next/static/media/download.b1b2622c.svg');
+                  background-color: currentcolor;
+                  --darkreader-inline-bgcolor: currentcolor;
+                "
+                data-darkreader-inline-bgcolor=""
+              ></span
+              ><span class="sr-only"></span
+            ></span>
+          </button>
+        </div>
+        <div class="save-slide SaveSlide_root__k6Uis">
+          <button
+            type="button"
+            class="Button_root__i1yp0 Button_secondary__hHiHI Button_text__ZT_3O Button_medium__H8pKi Button_icon__1C4qi save-slide-button SaveOptionsDrawer_drawerTrigger__Gb7nK"
+            data-testid="button"
+            aria-label="more_options"
+            data-cy="mobile-save-slideshow-button"
+          >
+            <span class="Icon_root__AjZyv" style="--size: 24px"
+              ><span
+                class="Icon_icon__4zzsG"
+                style="
+                  mask-image: url('https://public.slidesharecdn.com/_next/static/media/save.ef1812e2.svg');
+                  background-color: currentcolor;
+                  --darkreader-inline-bgcolor: currentcolor;
+                "
+                data-darkreader-inline-bgcolor=""
+              ></span
+              ><span class="sr-only"></span
+            ></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="slide-item VerticalInterstitialAdWrapper_root__LxQh8 VerticalInterstitialAdWrapper_extraMargin__mv8Ff"
+  >
+    <div class="interstitial-ad-container VerticalInterstitial_root__Dunl7">
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 320 / 50"
+      >
+        <div><div class="" id="document-interstitial-ad-5"></div></div>
+      </div>
+    </div>
+    <div class="interstitial-ad-container MultipleIncontentSmall_root__x58Hs">
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 300 / 100"
+      >
+        <div><div class="" id="slideshare_incontent_small_5-1"></div></div>
+      </div>
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 300 / 100"
+      >
+        <div><div class="" id="slideshare_incontent_small_5-2"></div></div>
+      </div>
+    </div>
+    <div class="interstitial-ad-container MultipleIncontentWide_root__4WD8U">
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 300 / 100"
+      >
+        <div><div class="" id="slideshare_incontent_wide_5-0"></div></div>
+      </div>
+    </div>
+    <div class="interstitial-ad-container MultipleIncontentLarge_root__pGIAn">
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 300 / 100"
+      >
+        <div><div class="" id="slideshare_incontent_large_5-1"></div></div>
+      </div>
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 300 / 100"
+      >
+        <div><div class="" id="slideshare_incontent_large_5-2"></div></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <p class="VerticalSlide_slideNumber__kZzJG">6</p>
+    <div
+      id="slide6"
+      class="VerticalSlide_root__jU_9r slide-item"
+      style="aspect-ratio: 595 / 842"
+      data-cy="slide-container"
+    >
+      <div class="VerticalSlideImage_root__64KSA">
+        <div
+          class="VerticalSlideImage_overlay__UDxeS VerticalSlideImage_loaded__Q7FLb"
+        ></div>
+        <img
+          id="slide-image-5"
+          alt='Java SE 7   稿 草冊手術技
+      Scanner scanner = new Scanner(System.in);
+      CashCard card1 = new CashCard("A001", 500, 0);
+      card1.store(scanner.nextInt());
+
+
+      CashCard card2 = new CashCard("A002", 300, 0);
+      card2.store(scanner.nextInt());
+
+
+      CashCard card3 = new CashCard("A003", 1000, 1);
+      card3.store(scanner.nextInt());
+          好處是什麼顯而易見，相較於先前得撰寫重複流程，CashCard 使用者應該會比
+      較想寫這個吧！你封裝了什麼呢？你封裝了儲值的流程
+                             你封裝了儲值的流程。哪天你也許考慮每加值
+                             你封裝了儲值的流程
+      1000 元就增加一點紅利，而不像現在就算加值 5000 元也只有一點紅利，就算改變了
+      store()的流程，CashCard 使用者也無需修改程式。
+        同樣地，charge()與 exchange()方法也分別封裝了扣款以及兌換紅利點數的
+      流程。為了知道兌換紅利點數後，剩餘的點數還有多少，exchange()必須傳回剩餘
+      的點數值，方法若會傳回值，必須於方法前宣告傳回值的型態 。
+        提示             在 Java 命名慣例中，方法名稱首字是小寫。
+        其實如果是直接建立三個 CashCard 物件，而後進行儲值並顯示明細，可以如下
+Lab   使用陣列，讓程式更簡潔：
+      Encapsulation2           CashApp.java
+      package cc.openhome;
+
+
+      import java.util.Scanner;
+
+
+      public class CardApp {
+          public static void main(String[] args) {
+                  CashCard[] cards = {
+                       new CashCard("A001", 500, 0),
+                       new CashCard("A002", 300, 0),
+                       new CashCard("A003", 1000, 1)
+                  };
+
+
+                  Scanner scanner = new Scanner(System.in);
+                  for(CashCard card : cards) {
+                       System.out.printf("   為   (%s, %d, %d)   ：值儲   ",
+                             card.number, card.balance, card.bonus);
+                       card.store(scanner.nextInt());
+                       System.out.printf("   細明   (%s, %d, %d)%n",
+ '
+          class="vertical-slide-image VerticalSlideImage_image__VtE4p VerticalSlideImage_loaded__Q7FLb"
+          data-testid="vertical-slide-image"
+          loading="lazy"
+          srcset="
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-6-320.jpg   320w,
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-6-638.jpg   638w,
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/75/Java-SE-7-6-2048.jpg 2048w
+          "
+          src="https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-6-320.jpg"
+          sizes="100vw"
+        />
+        <div class="SlideScrollDetector_root__AIK38">
+          <div
+            class="SlideScrollDetector_detector__rhkyk SlideScrollDetector_detector1__NmF8s"
+            data-index="0"
+          ></div>
+          <div
+            class="SlideScrollDetector_detector__rhkyk SlideScrollDetector_detector2__32XWr"
+            data-index="1"
+          ></div>
+        </div>
+      </div>
+      <!--$--><!--/$-->
+      <div class="VerticalSlideActions_root__azvaH">
+        <div class="Tooltip_triggerWrapper___S2HG">
+          <button
+            type="button"
+            class="Button_root__i1yp0 Button_primary__K25Gq Button_text__ZT_3O Button_medium__H8pKi Button_icon__1C4qi slide-download-button VerticalSlideActions_downloadButton__ancDu"
+            data-testid="button"
+          >
+            <span class="Icon_root__AjZyv" style="--size: 24px"
+              ><span
+                class="Icon_icon__4zzsG"
+                style="
+                  mask-image: url('https://public.slidesharecdn.com/_next/static/media/download.b1b2622c.svg');
+                  background-color: currentcolor;
+                  --darkreader-inline-bgcolor: currentcolor;
+                "
+                data-darkreader-inline-bgcolor=""
+              ></span
+              ><span class="sr-only"></span
+            ></span>
+          </button>
+        </div>
+        <div class="save-slide SaveSlide_root__k6Uis">
+          <button
+            type="button"
+            class="Button_root__i1yp0 Button_secondary__hHiHI Button_text__ZT_3O Button_medium__H8pKi Button_icon__1C4qi save-slide-button SaveOptionsDrawer_drawerTrigger__Gb7nK"
+            data-testid="button"
+            aria-label="more_options"
+            data-cy="mobile-save-slideshow-button"
+          >
+            <span class="Icon_root__AjZyv" style="--size: 24px"
+              ><span
+                class="Icon_icon__4zzsG"
+                style="
+                  mask-image: url('https://public.slidesharecdn.com/_next/static/media/save.ef1812e2.svg');
+                  background-color: currentcolor;
+                  --darkreader-inline-bgcolor: currentcolor;
+                "
+                data-darkreader-inline-bgcolor=""
+              ></span
+              ><span class="sr-only"></span
+            ></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <p class="VerticalSlide_slideNumber__kZzJG">7</p>
+    <div
+      id="slide7"
+      class="VerticalSlide_root__jU_9r slide-item"
+      style="aspect-ratio: 595 / 842"
+      data-cy="slide-container"
+    >
+      <div class="VerticalSlideImage_root__64KSA">
+        <div
+          class="VerticalSlideImage_overlay__UDxeS VerticalSlideImage_loaded__Q7FLb"
+        ></div>
+        <img
+          id="slide-image-6"
+          alt='Java SE 7   稿 草冊手術技
+                            card.number, card.balance, card.bonus);
+                  }
+           }
+      }
+           執行結果如下所示：
+       為  (A001, 500, 0)     ：值儲    1000
+      細明   (A001, 1500, 1)
+       為  (A002, 300, 0)     ：值儲    2000
+      細明   (A002, 2300, 1)
+       為  (A003, 1000, 1)     ：值儲    3000
+      細明   (A003, 4000, 2)
+
+
+            封裝物件內部資
+                內部資料
+      5.1.3 封裝物件內部資料
+        在前一個範例中，你在 CashCard 類別上定義了 store()等方法，你「希望」
+      使用者如下撰寫程式，這樣才可以執行 stroe()等方法中的相關條件檢查流程：
+      CashCard card1 = new CashCard("A001", 500, 0);
+      card1.store(scanner.nextInt());
+        老實說，你的希望完全就是一廂情願，因為 CashCard 使用者還是可以如下撰
+      寫程式，跳過你的相關條件檢查：
+      CashCard card1 = new CashCard("A001", 500, 0);
+      card1.balance += scanner.nextInt();
+      card1.bonus += 100;
+        問題在哪？因為你沒有封裝 CashCard 中不想讓使用者直接存取的私有資料，
+Lab   使用者撰寫程式時，就有了自由存取類別私有資料的選擇，如果有些資料是類別所私
+      有，在 Java 中可以使用 private 關鍵字定義：
+      Encapsulation3          CashCard.java
+      package cc.openhome;
+      class CashCard {
+           private String number;           使用 private 定義私有成員
+           private int balance;
+           private int bonus;
+           ...   略
+           void store(int money) {               要 修 改 balance ， 得 透 過
+                  if(money > 0) {                       定義的流程
+                                                 store()定義的流程
+                      this.balance += money;
+                      if(money >= 1000) {
+                         this.bonus++;
+ '
+          class="vertical-slide-image VerticalSlideImage_image__VtE4p VerticalSlideImage_loaded__Q7FLb"
+          data-testid="vertical-slide-image"
+          loading="lazy"
+          srcset="
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-7-320.jpg   320w,
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-7-638.jpg   638w,
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/75/Java-SE-7-7-2048.jpg 2048w
+          "
+          src="https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-7-320.jpg"
+          sizes="100vw"
+        />
+        <div class="SlideScrollDetector_root__AIK38">
+          <div
+            class="SlideScrollDetector_detector__rhkyk SlideScrollDetector_detector1__NmF8s"
+            data-index="0"
+          ></div>
+          <div
+            class="SlideScrollDetector_detector__rhkyk SlideScrollDetector_detector2__32XWr"
+            data-index="1"
+          ></div>
+        </div>
+      </div>
+      <!--$--><!--/$-->
+      <div class="VerticalSlideActions_root__azvaH">
+        <div class="Tooltip_triggerWrapper___S2HG">
+          <button
+            type="button"
+            class="Button_root__i1yp0 Button_primary__K25Gq Button_text__ZT_3O Button_medium__H8pKi Button_icon__1C4qi slide-download-button VerticalSlideActions_downloadButton__ancDu"
+            data-testid="button"
+          >
+            <span class="Icon_root__AjZyv" style="--size: 24px"
+              ><span
+                class="Icon_icon__4zzsG"
+                style="
+                  mask-image: url('https://public.slidesharecdn.com/_next/static/media/download.b1b2622c.svg');
+                  background-color: currentcolor;
+                  --darkreader-inline-bgcolor: currentcolor;
+                "
+                data-darkreader-inline-bgcolor=""
+              ></span
+              ><span class="sr-only"></span
+            ></span>
+          </button>
+        </div>
+        <div class="save-slide SaveSlide_root__k6Uis">
+          <button
+            type="button"
+            class="Button_root__i1yp0 Button_secondary__hHiHI Button_text__ZT_3O Button_medium__H8pKi Button_icon__1C4qi save-slide-button SaveOptionsDrawer_drawerTrigger__Gb7nK"
+            data-testid="button"
+            aria-label="more_options"
+            data-cy="mobile-save-slideshow-button"
+          >
+            <span class="Icon_root__AjZyv" style="--size: 24px"
+              ><span
+                class="Icon_icon__4zzsG"
+                style="
+                  mask-image: url('https://public.slidesharecdn.com/_next/static/media/save.ef1812e2.svg');
+                  background-color: currentcolor;
+                  --darkreader-inline-bgcolor: currentcolor;
+                "
+                data-darkreader-inline-bgcolor=""
+              ></span
+              ><span class="sr-only"></span
+            ></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="slide-item VerticalInterstitialAdWrapper_root__LxQh8 VerticalInterstitialAdWrapper_extraMargin__mv8Ff"
+  >
+    <div class="interstitial-ad-container VerticalInterstitial_root__Dunl7">
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 320 / 50"
+      >
+        <div><div class="" id="document-interstitial-ad-7"></div></div>
+      </div>
+    </div>
+    <div class="interstitial-ad-container MultipleIncontentSmall_root__x58Hs">
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 300 / 100"
+      >
+        <div><div class="" id="slideshare_incontent_small_7-1"></div></div>
+      </div>
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 300 / 100"
+      >
+        <div><div class="" id="slideshare_incontent_small_7-2"></div></div>
+      </div>
+    </div>
+    <div class="interstitial-ad-container MultipleIncontentWide_root__4WD8U">
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 300 / 100"
+      >
+        <div><div class="" id="slideshare_incontent_wide_7-0"></div></div>
+      </div>
+    </div>
+    <div class="interstitial-ad-container MultipleIncontentLarge_root__pGIAn">
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 300 / 100"
+      >
+        <div><div class="" id="slideshare_incontent_large_7-1"></div></div>
+      </div>
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 300 / 100"
+      >
+        <div><div class="" id="slideshare_incontent_large_7-2"></div></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <p class="VerticalSlide_slideNumber__kZzJG">8</p>
+    <div
+      id="slide8"
+      class="VerticalSlide_root__jU_9r slide-item"
+      style="aspect-ratio: 595 / 842"
+      data-cy="slide-container"
+    >
+      <div class="VerticalSlideImage_root__64KSA">
+        <div
+          class="VerticalSlideImage_overlay__UDxeS VerticalSlideImage_loaded__Q7FLb"
+        ></div>
+        <img
+          id="slide-image-7"
+          alt='Java SE 7   稿 草冊手術技
+                }
+            }
+            else {
+                System.out.println("   ？嗎的 亂來是你 ？的 負是值儲   ");
+            }
+    }
+
+
+    int getBalance() {
+                                        提供取值方法
+            return balance;
+    }
+
+
+    int getBonus() {
+            return bonus;
+    }
+
+
+    String getNumber() {
+            return number;
+    }
+}
+   在這個例子，你不想讓使用者直接存取 number、balance 與 bonus，所以使
+用 private 宣告 ，如此一來，編譯器會讓使用者在直接存取 number、balance
+與 bonus 時編譯失敗：
+
+
+
+
+               圖 5.1 不能存取 private 成員
+   如果你沒有提供方法存取 private 成員，那使用者就不能存取，在 CashCard
+的例子中，如果想修改 balance 或 bouns，就一定得透過 store()、charge()、
+exchange()等方法，也就一定得經過你定義的流程 。
+     如果沒辦法直接取得 number、balance 與 bonus，那這段程式碼怎麼辦？
+ '
+          class="vertical-slide-image VerticalSlideImage_image__VtE4p VerticalSlideImage_loaded__Q7FLb"
+          data-testid="vertical-slide-image"
+          loading="lazy"
+          srcset="
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-8-320.jpg   320w,
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-8-638.jpg   638w,
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/75/Java-SE-7-8-2048.jpg 2048w
+          "
+          src="https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-8-320.jpg"
+          sizes="100vw"
+        />
+        <div class="SlideScrollDetector_root__AIK38">
+          <div
+            class="SlideScrollDetector_detector__rhkyk SlideScrollDetector_detector1__NmF8s"
+            data-index="0"
+          ></div>
+          <div
+            class="SlideScrollDetector_detector__rhkyk SlideScrollDetector_detector2__32XWr"
+            data-index="1"
+          ></div>
+        </div>
+      </div>
+      <!--$--><!--/$-->
+      <div class="VerticalSlideActions_root__azvaH">
+        <div class="Tooltip_triggerWrapper___S2HG">
+          <button
+            type="button"
+            class="Button_root__i1yp0 Button_primary__K25Gq Button_text__ZT_3O Button_medium__H8pKi Button_icon__1C4qi slide-download-button VerticalSlideActions_downloadButton__ancDu"
+            data-testid="button"
+          >
+            <span class="Icon_root__AjZyv" style="--size: 24px"
+              ><span
+                class="Icon_icon__4zzsG"
+                style="
+                  mask-image: url('https://public.slidesharecdn.com/_next/static/media/download.b1b2622c.svg');
+                  background-color: currentcolor;
+                  --darkreader-inline-bgcolor: currentcolor;
+                "
+                data-darkreader-inline-bgcolor=""
+              ></span
+              ><span class="sr-only"></span
+            ></span>
+          </button>
+        </div>
+        <div class="save-slide SaveSlide_root__k6Uis">
+          <button
+            type="button"
+            class="Button_root__i1yp0 Button_secondary__hHiHI Button_text__ZT_3O Button_medium__H8pKi Button_icon__1C4qi save-slide-button SaveOptionsDrawer_drawerTrigger__Gb7nK"
+            data-testid="button"
+            aria-label="more_options"
+            data-cy="mobile-save-slideshow-button"
+          >
+            <span class="Icon_root__AjZyv" style="--size: 24px"
+              ><span
+                class="Icon_icon__4zzsG"
+                style="
+                  mask-image: url('https://public.slidesharecdn.com/_next/static/media/save.ef1812e2.svg');
+                  background-color: currentcolor;
+                  --darkreader-inline-bgcolor: currentcolor;
+                "
+                data-darkreader-inline-bgcolor=""
+              ></span
+              ><span class="sr-only"></span
+            ></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <p class="VerticalSlide_slideNumber__kZzJG">9</p>
+    <div
+      id="slide9"
+      class="VerticalSlide_root__jU_9r slide-item"
+      style="aspect-ratio: 595 / 842"
+      data-cy="slide-container"
+    >
+      <div class="VerticalSlideImage_root__64KSA">
+        <div
+          class="VerticalSlideImage_overlay__UDxeS VerticalSlideImage_loaded__Q7FLb"
+        ></div>
+        <img
+          id="slide-image-8"
+          alt='Java SE 7   稿 草冊手術技
+
+
+
+
+                                   成員怎麼辦
+                                     怎麼辦？
+               圖 5.2 不能存取 private 成員怎麼辦？
+   除非你願意提供取值方法（Getter）      ，讓使用者可以取得 number、balance 與
+bonus 的值，否則使用者一定無法取得，基於你的意願，CashCard 類別上定義了
+getNumber()、getBalance()與 getBonus()等取值方法 ，所以你可以如下修
+改程式：
+System.out.printf("   細明   (%s, %d, %d)%n",
+              card1.getNumber(), card1.getBalance(), card1.getBonus());
+System.out.printf("   細明   (%s, %d, %d)%n",
+              card2.getNumber(), card2.getBalance(), card2.getBonus());
+System.out.printf("   細明   (%s, %d, %d)%n",
+              card3.getNumber(), card3.getBalance(), card3.getBonus());
+    在 Java 命名規範中，取值方法的名稱形式是固定的，也就是以 get 開頭，之後
+           命名規範中，取值方法的名稱形式是固定的，            開頭，
+接上首字大寫的單字。
+接上首字大寫的單字。在 IDE 中，可以使用程式碼自動產生功能來生成取值方法，以
+NetBeans 為例，可以在類別原始碼中按右鍵，執行「Insert Code...」指令，選擇
+「Getter...」
+          ，在「Generate Getters」中選擇想產生哪些資料成員的取值方法，按下
+「Generate」就可以自動生成取值方法的程式碼：
+
+
+
+
+             圖 5.3 自動生成取值方法
+  所以你封裝了什麼，封裝了類別私有資料
+           封裝了類別私有資料，讓使用者無法直接存取，而必須透過
+           封裝了類別私有資料
+你提供的操作方法，經過你定義的流程才有可能存取私有資料，事實上，使用者也無
+從得知你的類別中有哪些私有資料，使用者不會知道物件的內部細節。
+     在這邊對封裝作個小小結論，封裝目的主要就是隱藏物件細節，將物件當作黑箱
+                  封裝目的主要就是隱藏物件細節，
+                  封裝目的主要就是隱藏物件細節
+ '
+          class="vertical-slide-image VerticalSlideImage_image__VtE4p VerticalSlideImage_loaded__Q7FLb"
+          data-testid="vertical-slide-image"
+          loading="lazy"
+          srcset="
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-9-320.jpg   320w,
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-9-638.jpg   638w,
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/75/Java-SE-7-9-2048.jpg 2048w
+          "
+          src="https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-9-320.jpg"
+          sizes="100vw"
+        />
+        <div class="SlideScrollDetector_root__AIK38">
+          <div
+            class="SlideScrollDetector_detector__rhkyk SlideScrollDetector_detector1__NmF8s"
+            data-index="0"
+          ></div>
+          <div
+            class="SlideScrollDetector_detector__rhkyk SlideScrollDetector_detector2__32XWr"
+            data-index="1"
+          ></div>
+        </div>
+      </div>
+      <!--$--><!--/$-->
+      <div class="VerticalSlideActions_root__azvaH">
+        <div class="Tooltip_triggerWrapper___S2HG">
+          <button
+            type="button"
+            class="Button_root__i1yp0 Button_primary__K25Gq Button_text__ZT_3O Button_medium__H8pKi Button_icon__1C4qi slide-download-button VerticalSlideActions_downloadButton__ancDu"
+            data-testid="button"
+          >
+            <span class="Icon_root__AjZyv" style="--size: 24px"
+              ><span
+                class="Icon_icon__4zzsG"
+                style="
+                  mask-image: url('https://public.slidesharecdn.com/_next/static/media/download.b1b2622c.svg');
+                  background-color: currentcolor;
+                  --darkreader-inline-bgcolor: currentcolor;
+                "
+                data-darkreader-inline-bgcolor=""
+              ></span
+              ><span class="sr-only"></span
+            ></span>
+          </button>
+        </div>
+        <div class="save-slide SaveSlide_root__k6Uis">
+          <button
+            type="button"
+            class="Button_root__i1yp0 Button_secondary__hHiHI Button_text__ZT_3O Button_medium__H8pKi Button_icon__1C4qi save-slide-button SaveOptionsDrawer_drawerTrigger__Gb7nK"
+            data-testid="button"
+            aria-label="more_options"
+            data-cy="mobile-save-slideshow-button"
+          >
+            <span class="Icon_root__AjZyv" style="--size: 24px"
+              ><span
+                class="Icon_icon__4zzsG"
+                style="
+                  mask-image: url('https://public.slidesharecdn.com/_next/static/media/save.ef1812e2.svg');
+                  background-color: currentcolor;
+                  --darkreader-inline-bgcolor: currentcolor;
+                "
+                data-darkreader-inline-bgcolor=""
+              ></span
+              ><span class="sr-only"></span
+            ></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="slide-item VerticalInterstitialAdWrapper_root__LxQh8 VerticalInterstitialAdWrapper_extraMargin__mv8Ff"
+  >
+    <div class="interstitial-ad-container VerticalInterstitial_root__Dunl7">
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 320 / 50"
+      >
+        <div><div class="" id="document-interstitial-ad-9"></div></div>
+      </div>
+    </div>
+    <div class="interstitial-ad-container MultipleIncontentSmall_root__x58Hs">
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 300 / 100"
+      >
+        <div><div class="" id="slideshare_incontent_small_9-1"></div></div>
+      </div>
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 300 / 100"
+      >
+        <div><div class="" id="slideshare_incontent_small_9-2"></div></div>
+      </div>
+    </div>
+    <div class="interstitial-ad-container MultipleIncontentWide_root__4WD8U">
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 300 / 100"
+      >
+        <div><div class="" id="slideshare_incontent_wide_9-0"></div></div>
+      </div>
+    </div>
+    <div class="interstitial-ad-container MultipleIncontentLarge_root__pGIAn">
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 300 / 100"
+      >
+        <div><div class="" id="slideshare_incontent_large_9-1"></div></div>
+      </div>
+      <div
+        class="freestar-ad-container FreestarAdContainer_root__qPPC_"
+        style="--fallback-aspect-ratio: 300 / 100"
+      >
+        <div><div class="" id="slideshare_incontent_large_9-2"></div></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <p class="VerticalSlide_slideNumber__kZzJG">10</p>
+    <div
+      id="slide10"
+      class="VerticalSlide_root__jU_9r slide-item"
+      style="aspect-ratio: 595 / 842"
+      data-cy="slide-container"
+    >
+      <div class="VerticalSlideImage_root__64KSA">
+        <div
+          class="VerticalSlideImage_overlay__UDxeS VerticalSlideImage_loaded__Q7FLb"
+        ></div>
+        <img
+          id="slide-image-9"
+          alt="Java SE 7   稿 草冊手術技
+進行操作。就如先前的範例，使用者會呼叫建構式，但不知道建構式的細節，使用者
+進行操作
+會呼叫方法，但不知道方法的流程，使用者也不會知道有哪些私有資料，要操作物件，
+一律得透過你提供的方法呼叫。
+  private 也可以用在方法或建構式宣告上，私有方法或建構式通常是類別內部
+某個共用的演算流程，外界不用知道私有方法的存在。private 也可以用在內部類
+別宣告，內部類別會在稍後說明。
+    提示        私有建構式的使用比較進階，有興趣可以參考：
+                http://caterpillar.onlyfun.net/Gossip/DesignPattern/SingletonPatter
+                n.htm
+
+
+
+    類別語法細節
+5.2 類別語法細節
+   物件導向觀念是抽象的，不同程式語言會用不同語法來支援觀念的實現，前一節
+討論過物件導向中封裝的通用概念，以及如何用 Java 語法實現，接下來這節則要討
+論 Java 的特定語法細節。
+
+
+            權限修飾
+5.2.1public 權限修飾
+     前一節的 CashCard 類別是定義在 cc.openhome 套件中，假設現在為了管理
+上的需求，你要將 CashCard 類別定義至 cc.openhome.virtual 套件中，除了原
+始碼與位元碼的資料夾需求必須符合套件階層之外，原始碼內容也得作些修改：
+package cc.openhome.virtual;
+class CashCard {
+    ...
+}
+     這一改可不得了，你發現使用到 CashCard 的程式碼都出錯了：
+
+
+
+
+                                 不是公開的？
+                  圖 5.4 CashCard 不是公開的？
+     前一節看到 private 權限修飾，宣告為 private 的成員表示為類別私有，使
+ "
+          class="vertical-slide-image VerticalSlideImage_image__VtE4p VerticalSlideImage_loaded__Q7FLb"
+          data-testid="vertical-slide-image"
+          loading="lazy"
+          srcset="
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-10-320.jpg   320w,
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-10-638.jpg   638w,
+            https://image.slidesharecdn.com/1-130217041357-phpapp01/75/Java-SE-7-10-2048.jpg 2048w
+          "
+          src="https://image.slidesharecdn.com/1-130217041357-phpapp01/85/Java-SE-7-10-320.jpg"
+          sizes="100vw"
+        />
+        <div class="SlideScrollDetector_root__AIK38">
+          <div
+            class="SlideScrollDetector_detector__rhkyk SlideScrollDetector_detector1__NmF8s"
+            data-index="0"
+          ></div>
+          <div
+            class="SlideScrollDetector_detector__rhkyk SlideScrollDetector_detector2__32XWr"
+            data-index="1"
+          ></div>
+        </div>
+      </div>
+      <!--$--><!--/$-->
+      <div class="VerticalSlideActions_root__azvaH">
+        <div class="Tooltip_triggerWrapper___S2HG">
+          <button
+            type="button"
+            class="Button_root__i1yp0 Button_primary__K25Gq Button_text__ZT_3O Button_medium__H8pKi Button_icon__1C4qi slide-download-button VerticalSlideActions_downloadButton__ancDu"
+            data-testid="button"
+          >
+            <span class="Icon_root__AjZyv" style="--size: 24px"
+              ><span
+                class="Icon_icon__4zzsG"
+                style="
+                  mask-image: url('https://public.slidesharecdn.com/_next/static/media/download.b1b2622c.svg');
+                  background-color: currentcolor;
+                  --darkreader-inline-bgcolor: currentcolor;
+                "
+                data-darkreader-inline-bgcolor=""
+              ></span
+              ><span class="sr-only"></span
+            ></span>
+          </button>
+        </div>
+        <div class="save-slide SaveSlide_root__k6Uis">
+          <button
+            type="button"
+            class="Button_root__i1yp0 Button_secondary__hHiHI Button_text__ZT_3O Button_medium__H8pKi Button_icon__1C4qi save-slide-button SaveOptionsDrawer_drawerTrigger__Gb7nK"
+            data-testid="button"
+            aria-label="more_options"
+            data-cy="mobile-save-slideshow-button"
+          >
+            <span class="Icon_root__AjZyv" style="--size: 24px"
+              ><span
+                class="Icon_icon__4zzsG"
+                style="
+                  mask-image: url('https://public.slidesharecdn.com/_next/static/media/save.ef1812e2.svg');
+                  background-color: currentcolor;
+                  --darkreader-inline-bgcolor: currentcolor;
+                "
+                data-darkreader-inline-bgcolor=""
+              ></span
+              ><span class="sr-only"></span
+            ></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
