@@ -1,3 +1,6 @@
+閱讀完成日: 20240922
+心得: 對於理解python應該算是進階，但是依然還沒到最深，畢竟都沒有看到c層面的代碼，不過對於目前的我來說已經過於足夠，應該短期內也不會到更深了，如果要更深，就要把書籍再讀一遍，無法理解而跳過的部分重新了解之外，還要再讀C語言。
+
 [書籍程式碼下載](http://books.gotop.com.tw/download/ACL059900)
 
 - Ch01 Python起步走
@@ -156,20 +159,143 @@
 	- 具有`__iter__()`就是iterable物件
 	- 迭代器也是iterable物件
 	- python中提供的 `itertools`可協助建立迭代器或產生器
-	- 
+	- python中讀取檔案最好的方式就是不要去`read`，甚至可以將`file`用`set`讀取
+	- 如果想要自訂class是orderable，可使用`sorted`，那需要定義`__lt__()`
+	- `sorted`的`key`除了使用`lambda`設定之外，還可以使用`operator`模組的`itemgetter`或是`attrgetter`
+	- 群集架構
+		- 循序類型
+			- list, tuple, range
+			- str, bites, bytearray
+			- 共同行為
+				- `x in s`
+				- `x not in s`
+				- `s + t`
+				- `s * n`
+				- `s[i]`
+				- `s[i:j]`
+				- `s[i:j:k]`
+				- `len(s)`
+				- `mix(s)`
+				- `max(s)`
+				- `s.index(x[, i[, j]])`
+				- `s.count(x)`
+			- 可變動的循序類型(沒有`hash()`)共同行為
+				- s[i] = x
+				- s[i:j] = t 
+				- del s[i:j]
+				- s[i:j:k] = t
+				- del s[i:j:k]
+				- s.append(x)
+				- s.clear()
+				- s.copy()
+				- s.extend()
+				- s.insert(i, x)
+				- s.pop([i])
+				- s.remove(x)
+				- s.reverse()
+		- 集合類型
+			- 不會重複，是無序類型，元素必須是hashable物件
+			- 可以使用`in, not in, len(), &, |, -, ^, intersection(), union(), difference(), symmetric_difference()`
+		- 映射類型
+		- 使用`collections`模組可以找到進階的群集相關函式與方法
+			- `deque`
+			- `nametuple`
+			- `OrdereDict`
+			- `defaultdict`
+			- `Counter`
+			- `Chainmap`
+			- `UserList`
+			- `UserDict`
+			- `UserString`
+		- 自己實作群集(BookCode/samples/CH09/collection_advanced/chainmap.py)
+			- `__getitem__()`可以用`[]`取值
+			- `__setitem__()`可以實現`[]`預設值
+			- `__delitem__()`可以透過`del`和`[]`刪除
+		- 可以繼承`collection.abc`內的物件以避免有必要方法沒有實作
 - Ch10 資料永續與交換   
-	- 
+	- `pickle`模組
+		- Pickling: 將python物件轉換為bytes，相反為unpickling
+	- `shelve`模組
+		- 像是字典的物件，類似簡單的資料庫介面，底層是使用dbm
+		- 以pickle為基礎的模組
+	- Python 標準規範是DB-API 2.0
+		- PEP 249
+		- 要有connect 函式`close()`, `commit()`, `rollback()`, `cursor([cursorClass])`
+		- 標準程式庫的`sqlite3`為合規之一
+	- 交易基本需求(ACID)
+		- 原子性
+		- 一致性
+		- 隔離性
+			- 無隔離會發生Lost Update, Dirty read, Unrepeatable read, Phantom read
+		- 持續性
+	- 通用資料格式
+		- CSV
+		- JSON
+			- 名稱須以`""`
+			- 值可以是`""`包括的字串
+		- XML
 - Ch11 常用內建模組   
-	- 
+	- `datetime`
+	- `logging`
+	- `re`
+	- `os`
+	- `glob`
+	- `urllib`
+	- `request`
 - Ch12 除錯、測試與效能   
-	- 
+	- 測試
+		- 使用assert斷言
+		- 建議範圍
+			- 前置條件斷言客戶端呼叫函式前，已具備某些條件
+			- 後製條件驗證客戶端後，具有函式承諾之結果
+			- 類別不變量驗證物件某時間下的狀態
+			- 內部不變量使用斷言代替註解
+			- 流程不變量斷言程式流程中絕對不會執行到的程式碼部分
+		- [避免隱藏錯誤的防禦性設計](https://www.ithome.com.tw/voice/81659)
+		- `doctest` 
+			- 如果撰寫了REPL的執行範例，執行時再加上-v，可以追加顯示細節 (如: BookCode/samples/CH12/doctest_demo/util.py)
+		- `unittest`
+			- 也稱為PyUnit
+			- 四個部分
+				- 測試案例
+					- 如BookCode/samples/CH12/unittest_demo/
+					- 單元測試直接運行測試腳本
+					- 腳本測試會自動找出`unittest`類別中以`test_`為開頭的方法
+				- 測試設備
+					- 在`unittest`類別中如果有定義`setUp()`與`tearDown()`就會在test開頭與結尾呼叫
+				- 測試套件
+				- 測試執行器
+		- `timeit`
+		- `cProfile` or `profile`
 - Ch13 並行、平行與非同步   
-	- 
+	- `threading`
+		- 使用的場合之一，是輸入輸出密集的場合
+		- 計算密集反而不見得有用，甚至可能更差
+		- 可以設定Daemon，True都執行完就會結束
+		- 可以安插執行緒
+		- 競速
+		- 鎖定
+		- 死結
+		- 等待與通知
+		- Semaphore 與 Barrier
+	- `subprocess`
+	- `multiprocessing`
+		-  `multiprocessing` — Process-based parallelism[¶](https://docs.python.org/3/library/multiprocessing.html#module-multiprocessing "Link to this heading")
+		- `if __name__ == '__main__':`是必要的
+	- `concurrent.features`
+		- `ThreadPoolExecutor`
+		- `ProcessPoolExecutor`
+	- 非同步編程則允許程序在等待某個操作的結果時，繼續執行其他代碼，從而提高資源利用率和效率。
+	- `asyncio`
+	- `async`
+	- `await`
 - Ch14 進階主題   
-	- 
-- 附錄A venv   
-	- 
-- 附錄B Django簡介   
-	- 
-- 附錄C Beautiful Soup簡介
-	- 
+	- 描述器(Descrptor)
+		- 必須擁有`__get__()`, `__set__()`, `__delete__()`
+		- 描述屬性的取得、設定與刪除如何處理的物件
+	- 函式裝飾器
+		- 透過`functools.warp`會更好
+	- 類別裝飾器
+	- 方法裝飾器
+	- 相對匯入
+		- 在`__init__.py`如`from . import ...`
